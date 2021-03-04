@@ -1,5 +1,5 @@
 {
-  "name": "markdown-it-wrapping",
+  "name": "markdown-it-wrap-english",
   "version": "1.0.0",
   "description": "Wrapping English between CJK for markdown-it markdown parser.",
   "keywords": [
@@ -8,7 +8,7 @@
     "markdown",
     "cjk"
   ],
-  "repository": "",
+  "repository": "Alexs7zzh/markdown-it-wrap-english",
   "license": "MIT",
   "files": [
     "index.js",
