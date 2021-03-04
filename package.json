@@ -1,0 +1,38 @@
+{
+  "name": "markdown-it-wrapping",
+  "version": "1.0.0",
+  "description": "Wrapping English between CJK for markdown-it markdown parser.",
+  "keywords": [
+    "markdown-it-plugin",
+    "markdown-it",
+    "markdown",
+    "cjk"
+  ],
+  "repository": "",
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "dist/"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "test": "nyc mocha",
+    "coverage": "npm run test && nyc report --reporter html",
+    "report-coveralls": "nyc --reporter=lcov mocha",
+    "browserify": "rollup -c"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "eslint": "^7.21.0",
+    "markdown-it": "markdown-it/markdown-it",
+    "markdown-it-testgen": "~0.1.6",
+    "mocha": "^8.3.0",
+    "nyc": "^15.1.0",
+    "rollup": "^2.40.0",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "dependencies": {
+    "markdown-it-footnote": "^3.0.2"
+  }
+}

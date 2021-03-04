@@ -1,0 +1,43 @@
+.
+测试 test 测试
+.
+<p>测试<span class='before after'>test</span>测试</p>
+.
+
+.
+测试 *test* 测试
+.
+<p>测试<span class='before after'><em>test</em></span>测试</p>
+.
+
+.
+测试 *test* test 测试
+.
+<p>测试<span class='before after'><em>test</em> test</span>测试</p>
+.
+
+.
+*测试test* test
+.
+<p><em>测试<span class='before'>test</span></em><span class=''> test</span></p>
+.
+
+.
+*测试test* test
+.
+<p><em>测试<span class='before'>test</span></em><span class=''> test</span></p>
+.
+
+.
+test *测试*
+.
+<p><span class='after'>test</span><em>测试</em></p>
+.
+
+.
+测试  
+test
+.
+<p>测试<br>
+<span class=''>test</span></p>
+.
