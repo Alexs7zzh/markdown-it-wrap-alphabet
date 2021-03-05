@@ -1,5 +1,5 @@
 
-/*! markdown-it-wrapping 1.0.0 https://github.com/ @license MIT */
+/*! markdown-it-wrap-alphabet 1.1.0 https://github.com/Alexs7zzh/markdown-it-wrap-alphabet @license MIT */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -220,15 +220,6 @@
   };
   const en_close = () => new token('en_close', 'span', -1);
 
-  const render_en_open = (tokens, idx) => {
-    const meta = tokens[idx].meta;
-    let classes = [];
-    if (meta.before) classes.push('before');
-    if (meta.after)  classes.push('after');
-    return `<span class='${classes.join(' ')}'>`
-  };
-  const render_en_close = () => '</span>';
-
   const getEnglish = text => {
     return [...text.matchAll(/([\w,.;'"’‘”“ ()\-–—…+!?&/<>*[\]:@#=]+)/g)].filter(m => /[a-zA-Z]/.test(m[0]))
   };
@@ -404,7 +395,23 @@
     }
   };
 
-  var markdownItWrapEnglish = md => {
+  var markdownItWrapEnglish = (md, opts) => {
+    const defaultOptions = {
+      before: 'before',
+      after: 'after',
+      lang: ''
+    };
+    opts = Object.assign({}, defaultOptions, opts);
+
+    const render_en_open = (tokens, idx) => {
+      const meta = tokens[idx].meta;
+      let classes = [];
+      if (meta.before) classes.push(opts.before);
+      if (meta.after)  classes.push(opts.after);
+      return `<span ${opts.lang === '' ? '' : `lang='${opts.lang}' `}class='${classes.join(' ')}'>`
+    };
+    const render_en_close = () => '</span>';
+
     md.renderer.rules.en_open = render_en_open;
     md.renderer.rules.en_close = render_en_close;
     md.core.ruler.push('wrapEnglish', tokenize);

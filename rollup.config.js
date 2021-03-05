@@ -20,12 +20,12 @@ export default [
     input: 'index.js',
     output: [
       {
-        file: 'dist/markdown-it-wrap-english.js',
+        file: 'dist/markdown-it-wrap-alphabet.js',
         format: 'umd',
         name: 'markdownitIns'
       },
       {
-        file: 'dist/markdown-it-wrap-english.min.js',
+        file: 'dist/markdown-it-wrap-alphabet.min.js',
         format: 'umd',
         name: 'markdownitIns',
         plugins: [ terser() ]
