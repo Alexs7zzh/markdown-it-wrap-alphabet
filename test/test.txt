@@ -1,31 +1,31 @@
 .
 测试 test 测试
 .
-<p>测试<span class='before after'>test</span>测试</p>
+<p>测试<span class="before after">test</span>测试</p>
 .
 
 .
 测试 *test* 测试
 .
-<p>测试<span class='before after'><em>test</em></span>测试</p>
+<p>测试<span class="before after"><em>test</em></span>测试</p>
 .
 
 .
 测试 *test* test 测试
 .
-<p>测试<span class='before after'><em>test</em> test</span>测试</p>
+<p>测试<span class="before after"><em>test</em> test</span>测试</p>
 .
 
 .
 *测试test* test
 .
-<p><em>测试<span class='before'>test</span></em><span class=''> test</span></p>
+<p><em>测试<span class="before">test</span></em><span> test</span></p>
 .
 
 .
 test *测试*
 .
-<p><span class='after'>test</span><em>测试</em></p>
+<p><span class="after">test</span><em>测试</em></p>
 .
 
 .
@@ -33,29 +33,29 @@ test *测试*
 test
 .
 <p>测试<br>
-<span class=''>test</span></p>
+<span>test</span></p>
 .
 
 .
 test [test](example.com) 测试
 .
-<p><span class='after'>test <a href="example.com">test</a></span>测试</p>
+<p><span class="after">test <a href="example.com">test</a></span>测试</p>
 .
 
 .
 test [test 测试](example.com)
 .
-<p><span class=''>test </span><a href="example.com"><span class='after'>test</span>测试</a></p>
+<p><span>test </span><a href="example.com"><span class="after">test</span>测试</a></p>
 .
 
 .
 [测试 test](example.com) test
 .
-<p><a href="example.com">测试<span class='before'>test</span></a><span class=''> test</span></p>
+<p><a href="example.com">测试<span class="before">test</span></a><span> test</span></p>
 .
 
 .
 test [*test* 测试](example.com)
 .
-<p><span class=''>test </span><a href="example.com"><span class='after'><em>test</em></span>测试</a></p>
+<p><span>test </span><a href="example.com"><span class="after"><em>test</em></span>测试</a></p>
 .
