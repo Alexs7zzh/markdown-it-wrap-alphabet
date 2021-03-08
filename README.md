@@ -54,7 +54,10 @@ const wrap = require('markdown-it-wrap-alphabet')
 md.use(wrap, {
   before: 'space-before', // default: 'before'
   after:  'space-after',  // default: 'after'
-  lang:   'en'            // default: ''. Add lang attribute to span.
+  lang:   'en'            // default: ''
+                          // Add lang attribute to span
+  wrapAll: true           // default: false
+  // By default, this plugin skips paragraphs without CJK glyphs. However, in the case that you use the language attribute to apply different styles, you may want to wrap all alphabets even when there is no CJK glyphs in a certain paragraph.
 })
 ```
 
