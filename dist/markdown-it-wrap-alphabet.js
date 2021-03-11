@@ -1,5 +1,5 @@
 
-/*! markdown-it-wrap-alphabet 1.1.1 https://github.com/Alexs7zzh/markdown-it-wrap-alphabet @license MIT */
+/*! markdown-it-wrap-alphabet 1.2.1 https://github.com/Alexs7zzh/markdown-it-wrap-alphabet @license MIT */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :

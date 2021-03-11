@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-wrap-alphabet",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Wrap alphabets between CJK for markdown-it markdown parser.",
   "keywords": [
     "markdown-it-plugin",
@@ -11,6 +11,7 @@
   ],
   "repository": "Alexs7zzh/markdown-it-wrap-alphabet",
   "license": "MIT",
+  "main": "dist/markdown-it-wrap-alphabet.js",
   "files": [
     "index.js",
     "dist/"
