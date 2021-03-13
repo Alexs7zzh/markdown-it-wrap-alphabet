@@ -75,7 +75,7 @@ The argument of `shouldWrap` is the `state` property of `parser_block`. (See `st
 ```js
 state => {
   const lang = state.env && state.env.lang
-  if (lang !== undefined && lang === 'en') return false
+  if (lang === 'en') return false
   else return true
 }
 ```
