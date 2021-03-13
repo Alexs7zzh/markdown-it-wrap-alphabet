@@ -74,7 +74,8 @@ module.exports = (md, opts) => {
     before: 'before',
     after: 'after',
     lang: '',
-    wrapAll: false
+    wrapAll: false,
+    shouldWrap: () => true
   }
   opts = Object.assign({}, defaultOptions, opts)
 
@@ -88,6 +89,7 @@ module.exports = (md, opts) => {
   const en_close = () => new Token('en_close', 'span', -1)
 
   const tokenize = state => {
+    if (!opts.shouldWrap(state)) return false
     if (!hasCJK(state.src)) return false
     for (let idx = state.tokens.length - 1; idx >= 0; idx--) {
       if (state.tokens[idx].type !== 'inline') continue

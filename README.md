@@ -57,11 +57,27 @@ md.use(wrap, {
   lang:   'en'            // default: ''
                           // Add lang attribute to span
   wrapAll: true           // default: false
-  // By default, this plugin skips paragraphs without CJK glyphs.
-  // However, in the case that you use the language attribute to
-  // apply different styles, you may want to wrap all alphabets 
-  // even when there is no CJK glyphs in a certain paragraph.
+  shouldWrap: state => {  // default: always return true
+    if (...) return true
+    return false
+  }
 })
+```
+
+Generally speaking, you don't need to customize `wrapAll` and `shouldWrap` options. Here are their explanations:
+
+`wrapAll`: By default, this plugin skips paragraphs without CJK glyphs. However, in the case that you use the language attribute to apply different styles (i.e., you set different font sizes depending on languages), you may want to wrap all alphabets even when there is no CJK glyphs in a certain paragraph.
+
+`shouldWrap`: Normally this plugin leaves alone all paragraphs without CJK glyphs, not to mention a post without CJK glyphs at all. However, there is a possible edge case in which you have some CJK glyphs in a post written in, say, English. In that case, it is preferable to wrap manually that part of CJK glyphs instead of letting the plugin wrap all the English. Here is where the necessity of having a filter function to only implement this plugin to a certain set of posts comes in. 
+
+The argument of `shouldWrap` is the `state` property of `parser_block`. (See `state`'s source code [here](https://github.com/markdown-it/markdown-it/blob/cbf639ab0fdd97b52202c3471ded2e2f0337a049/lib/rules_core/state_core.js)) That being said, what we need is more likely to depend on the environment `markdown-it` is utilized in. For instance, if you use [Eleventy](https://www.11ty.dev/) as your SSG (static site generator) and have `lang` attribute in the frontmatter of every posts, you can pass a function as follows to skip all posts that are marked as English.
+
+```js
+state => {
+  const lang = state.env && state.env.lang
+  if (lang !== undefined && lang === 'en') return false
+  else return true
+}
 ```
 
 ## License

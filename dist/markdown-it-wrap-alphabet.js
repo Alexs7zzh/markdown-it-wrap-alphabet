@@ -1,5 +1,5 @@
 
-/*! markdown-it-wrap-alphabet 1.2.1 https://github.com/Alexs7zzh/markdown-it-wrap-alphabet @license MIT */
+/*! markdown-it-wrap-alphabet 1.3.0 https://github.com/Alexs7zzh/markdown-it-wrap-alphabet @license MIT */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -276,7 +276,8 @@
       before: 'before',
       after: 'after',
       lang: '',
-      wrapAll: false
+      wrapAll: false,
+      shouldWrap: () => true
     };
     opts = Object.assign({}, defaultOptions, opts);
 
@@ -290,6 +291,7 @@
     const en_close = () => new token('en_close', 'span', -1);
 
     const tokenize = state => {
+      if (!opts.shouldWrap(state)) return false
       if (!hasCJK(state.src)) return false
       for (let idx = state.tokens.length - 1; idx >= 0; idx--) {
         if (state.tokens[idx].type !== 'inline') continue
