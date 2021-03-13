@@ -46,7 +46,7 @@ md.use(wrap)
 
 ## Configuration
 
-You can pass an object to customize its output.
+You can pass an object to customize its output. **All are optional.**
 ```js
 const md = require('markdown-it')()
 const wrap = require('markdown-it-wrap-alphabet')
